@@ -25,7 +25,10 @@ class PostsController < ApplicationController
   def create
     @post = Post.create(post_params)
     @post.save
-    render json: @post, status: 201
+    respond_to do |format|
+      format.html {redirect_to post_path(@post)}
+      format.json {render json: @post, status: 201}
+    end
   end
 
   def edit
@@ -36,7 +39,10 @@ class PostsController < ApplicationController
 
   def update
     @post.update(post_params)
-    render json: @post, status: 202
+    respond_to do |format|
+      format.html {redirect_to post_path(@post)}
+      format.json {render json: @post, status: 202}
+    end 
   end
 
 private
