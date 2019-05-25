@@ -42,7 +42,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html {redirect_to post_path(@post)}
       format.json {render json: @post, status: 202}
-    end 
+    end
   end
 
 private
