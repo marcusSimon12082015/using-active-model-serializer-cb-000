@@ -26,6 +26,9 @@ class PostsController < ApplicationController
   end
 
   def edit
+    respond_to do |format|
+      format.html{render :edit}
+    end
   end
 
   def update
